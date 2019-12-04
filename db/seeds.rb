@@ -69,4 +69,3 @@ p "The database has now #{Tip.count} tips"
 sleep(1)
 
 p "---------------- END SEED ----------------"
-© 2019 GitHub, Inc.
