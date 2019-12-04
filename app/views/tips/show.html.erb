@@ -1,2 +1,13 @@
-<h1>Tips#show</h1>
-<p>Find me in app/views/tips/show.html.erb</p>
+<div class="card">
+
+  <div class="card-header">
+    <div class="font-weight-bold text-center"><h1>LIfe-hack : <%= @domain.name %>/ <%= @topic.name %>/ <%=@tip.name%></h1></div>
+  </div>
+
+  <div class="card-body">
+    <strong>Description : </strong><%= @tip.content %><br/>
+    <strong>Photo: </strong> <%= @tip.photo %><br/>
+    <strong>Video : </strong><%=  @tip.video %><br/><h5>
+  </div>
+
+</div>

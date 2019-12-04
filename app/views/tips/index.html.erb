@@ -1,2 +1,39 @@
-<h1>Tips#index</h1>
-<p>Find me in app/views/tips/index.html.erb</p>
+<h1>Life hacks</h1>
+<p></p>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-light">Life-hacks: Apprendre plus et plus vite</h1>
+    <p class="lead text-light">Plateforme d'échange de tuyaux et de savoirs en format efficace.<br/></p>
+  </div>
+</div>
+
+<section>
+<div class="card-deck">
+	<%Tip.all.each do |tip|%>
+	<div class="col-sm-4 mb-4">
+
+		<div class="card">
+
+		  <div class="card-header text-center font-weight-bold bg-secondary text-light">
+		  <%=tip.name%>
+		  </div>
+
+		  <div class="card-body align-center">
+		    <blockquote class="blockquote mb-0">
+		      <p><%=tip.content%></p>
+		      <footer class="blockquote-footer">
+			      <div class="row justify-content-between align-self-center mx-3">
+			      	<img class="card-img-top" src="<%=tip.photo%>" alt="">
+			      	<img class="card-img-top" src="<%=tip.video%>" alt="">
+			      	<%= link_to "Détails", tip_path(tip.id), class: "btn btn-info btn-lg btn-block" %>
+			      </div>
+		      </footer>
+		    </blockquote>
+		  </div>
+
+		</div>
+	</div>
+	<%end%>
+</div>
+</section>
