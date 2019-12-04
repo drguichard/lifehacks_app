@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron {
+	background-image: url('https://images.pexels.com/photos/1703314/pexels-photo-1703314.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom;
+	color:black !important;
+	margin-top: -1rem;
+	height: 500px;
+}
