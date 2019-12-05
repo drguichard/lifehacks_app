@@ -12,10 +12,13 @@
   	<a href="<%= tips_path %>" class="btn btn-primary">Voir tous les life-hacks sur le même sujet</a>
 
     <% if current_user %>
-    <a href="<%= edit_tip_path %>" class="btn btn-primary">Editer</a>
+    	<a href="<%= edit_tip_path %>" class="btn btn-primary">Editer</a>
+    	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer un Life hack</a>
 
 	<% else %>
+
     <% end %>
+  </div>
 
 
   </div>

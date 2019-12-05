@@ -17,8 +17,23 @@ class TipsController < ApplicationController
 
   def update
     @tip = Tip.find(params[:id])
-    tip_params = params.require(:tip).permit(:name, :content, :photo)
     @tip.update(tip_params)
-    redirect_to tips_path
+    redirect_to tip_path
   end
+
+  def new
+    @tip = Tip.new
+  end
+
+  def create
+    tip = Tip.create(tip_params)
+    redirect_to tip_path
+  end
+
+  private
+
+  def tip_params
+    params.require(:tip).permit(:name, :content, :photo)
+  end
+
 end
