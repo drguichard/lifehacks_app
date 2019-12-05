@@ -34,6 +34,12 @@
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in?  %>
             <li class="nav-item active">
+              <a class="nav-link" href="<%= tips_path %> ">Lifehacks<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= topics_path %> ">Sujets<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="<%= root_path %> ">Mon dashboard<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
