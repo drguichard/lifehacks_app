@@ -14,6 +14,9 @@
     <% if current_user %>
     	<a href="<%= edit_tip_path %>" class="btn btn-primary">Editer</a>
     	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer un Life hack</a>
+    	<a href="<%= tip_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+
+
 
 	<% else %>
 
