@@ -8,16 +8,13 @@
   </div>
 
   <div class="nav">
-  	<a href="<%= tips_path %>" class="btn btn-secondary">Revenir à la page d'accueil</a>
-  	<a href="<%= tips_path %>" class="btn btn-primary">Voir tous les life-hacks sur le même sujet</a>
+  	<a href="<%= tips_path %>" class="btn btn-light">Home</a>
+  	<a href="<%= tips_path %>" class="btn btn-info">Autres</a>
 
     <% if current_user %>
-    	<a href="<%= edit_tip_path %>" class="btn btn-primary">Editer</a>
-    	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer un Life hack</a>
+    	<a href="<%= edit_tip_path %>" class="btn btn-warning">Editer</a>
+    	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer</a>
     	<a href="<%= tip_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-
-
-
 	<% else %>
 
     <% end %>
