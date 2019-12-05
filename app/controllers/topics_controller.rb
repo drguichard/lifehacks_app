@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    @topic=.update(topic.params)
+    topic.update(topic.params)
     redirect_to topics_path
   end
 
@@ -36,5 +36,5 @@ class TopicsController < ApplicationController
 
   def topic_params 
     params.require(:topic).permit(:name)
-
+  end
 end
