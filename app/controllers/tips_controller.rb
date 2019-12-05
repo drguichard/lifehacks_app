@@ -3,13 +3,10 @@ class TipsController < ApplicationController
 
   def index
   	@tips = Tip.all
-  	@domain = Domain.find_by(id:params[:id])
-  	@topic = Topic.find_by(id:params[:id])
-    @user = User.find_by(id:params[:id])
   end
 
   def show
-  	@ctip = Tip.find_by(id:params[:id])
+  	@tip = Tip.find_by(id:params[:id])
   	@domain = Domain.find_by(id:params[:id])
   	@topic = Topic.find_by(id:params[:id])
   end
