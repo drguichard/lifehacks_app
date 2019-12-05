@@ -2,7 +2,22 @@
 <div class="card">
 
   <div class="card-header">
-    <div class="font-weight-bold text-center"><h1>LIfe-hack : <%= @domain.name %>/ <%= @topic.name %>: <%=@tip.name%></h1></div>
+    <div class="font-weight-bold text-center">
+    	<h1>Life-hack : <%=@tip.name%></h1>
+    </div>
+  </div>
+
+  <div class="nav">
+  	<a href="<%= tips_path %>" class="btn btn-secondary">Revenir à la page d'accueil</a>
+  	<a href="<%= tips_path %>" class="btn btn-primary">Voir tous les life-hacks sur le même sujet</a>
+
+    <% if current_user %>
+    <a href="<%= edit_tip_path %>" class="btn btn-primary">Editer</a>
+
+	<% else %>
+    <% end %>
+
+
   </div>
 
   <div class="card-body">
