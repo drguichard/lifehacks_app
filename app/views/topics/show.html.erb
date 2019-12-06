@@ -1,2 +1,29 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+</br></br>
+<div class="card">
+
+  <div class="card-header">
+    <div class="font-weight-bold text-center">
+    	<h1>Life-hack : <%=@topic.name%></h1>
+    </div>
+  </div>
+
+  <div class="nav btn-group">
+  	<a href="<%= topics_path %>" class="btn btn-light">Home</a>
+  	<a href="<%= topics_path %>" class="btn btn-info">Autres</a>
+
+    <% if current_user %>
+    	<a href="<%= edit_topic_path %>" class="btn btn-warning">Editer</a>
+    	<a href="<%= new_topic_path %>" class="btn btn-primary">Créer</a>
+    	<a href="<%= topic_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+    <% end %>
+  </div>
+
+
+  </div>
+
+  <div class="card-body">
+  	<strong>Domaine : </strong><%= @topic.domain.name %><br/>
+    <strong>Sujet : </strong><%= @topic.name %><br/>
+  </div>
+
+</div>

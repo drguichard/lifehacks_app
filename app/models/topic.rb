@@ -3,6 +3,6 @@ class Topic < ApplicationRecord
 
 	has_many :tips
 
-	belongs_to :user, optional: true
-	belongs_to :domain, optional: true
+	belongs_to :user
+	belongs_to :domain
 end

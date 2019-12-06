@@ -50,9 +50,9 @@ sleep(1)
 p "---------------- TOPICS ----------------"
 
 topics = Topic.create!([
-	{domain: Domain.all.sample, name: 'Tomate' }, 
-	{domain: Domain.all.sample, name: 'Lendemain de fête' },
-	{domain: Domain.all.sample, name: 'Organisation'}])
+	{user: User.all.sample, domain: Domain.all.sample, name: 'Tomate' }, 
+	{user: User.all.sample, domain: Domain.all.sample, name: 'Lendemain de fête' },
+	{user: User.all.sample, domain: Domain.all.sample, name: 'Organisation'}])
 tp Topic.all
 p "The database has now #{Topic.count} topics"
 sleep(1)

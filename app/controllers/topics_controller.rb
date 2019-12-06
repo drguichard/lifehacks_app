@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    topic.update(topic.params)
+    @topic.update(topic.params)
     redirect_to topics_path
   end
 
@@ -20,8 +20,9 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.create(topic_params)
-    redirect_to topic_path(@topic.id)
+    topic_data_user = topic_params.merge({'user_id' => current_user.id})
+    topic = Topic.create(topic_data_user)
+    redirect_to topic_path(topic.id)
   end
 
   def new
@@ -32,9 +33,9 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
   end
 
-  private
+    private
 
-  def topic_params 
-    params.require(:topic).permit(:name)
+  def topic_params
+    params.require(:topic).permit(:name, :domain_id)
   end
 end
