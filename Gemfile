@@ -68,6 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Other gems
 gem 'devise'
+gem 'cancancan'
 gem 'database_cleaner'
 gem 'pry'
 gem 'rubocop'
@@ -75,5 +76,5 @@ gem 'rspec'
 gem 'colorize', '~> 0.8.1'
 gem 'terminal-table'
 gem 'table_print'
-gem 'cancancan'
+
 
