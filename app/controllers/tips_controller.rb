@@ -16,7 +16,7 @@ class TipsController < ApplicationController
   def update
     @tip = Tip.find(params[:id])
     @tip.update(tip_params)
-    redirect_to tip_path
+    redirect_to tip_path(@tip.id)
   end
 
   def new
@@ -24,8 +24,9 @@ class TipsController < ApplicationController
   end
 
   def create
+    #tip_params[:topic] = Topic.find_by(id:tip_params[:topic]) # on remplace l'id Topic par le topic (= on identifie l'id du topic correspondant au paramêtre tip
     tip = Tip.create(tip_params)
-    redirect_to tip_path
+    redirect_to tip_path(tip.id)
   end
 
   def destroy
