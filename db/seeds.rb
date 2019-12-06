@@ -34,6 +34,8 @@ p "---------------- USERS ----------------"
   )
 end
 User.create!(first_name: "Thibault",last_name: "Guichard", password: "testtest",email: "tguichard8@hotmail.com")
+User.create!(first_name: "Fabrice",last_name: "Lazzarotto", password: "testtest",email: "fabricelazzarotto@gmail.com")
+
 tp User.all
 p "The database has now #{User.count} users"
 sleep(1)

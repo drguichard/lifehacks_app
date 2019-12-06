@@ -1,4 +1,46 @@
- beautiful design
+
+
+# LIFE-HACKERS COMMUNITY
+
+Git clone https://github.com/drguichard/lifehacks_app/tree/masterclass
+
+In terminal go to the root
+Bundle install
+rails db:migrate
+rails db:seed
+
+in your browser http://localhost:3000/
+
+[Trello-Users-stories_P1](https://trello.com/b/gxEx3CuS/s1-life-hacks-community-users-stories)
+[Trello-Users-stories_P2](https://trello.com/b/2HwB6FoU/s2-life-hacks-community)
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	INTRODUCTION
+
+I love to learn things from very various **domains** and **topics**, I feel passionated, work hard to learn but my motivation fades away very quickly. <br>
+**Why does my motivation fades away before I master the topic ?**:<br>
+
+* I think the target do not worth the personal investment's cost.<br>
+* I have too much things to learn, I can't choose.<br>
+* I have not enough time: only time-consuming Google researches or twitter hashtags will probably help me.<br>
+* I will not be congratulated for my personal successes.<br>
+
+Learning quickly from people that master a **domain** or a **topic**  with small tips seems to be a right solution.
+
+I want to create a community where people are willing to share their tips on the topics they master and receive tips on the topics they are interested in.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	APP COMPONENTS
+
+* short tips with text, image or video.
+* search by keywords or browse in domain/topic.
+* personal newsletter.
+* very simple UI and beautiful design
 * awards for contributors (Friend, Master, Admin level: validation of a tip)
 * tips notation
 

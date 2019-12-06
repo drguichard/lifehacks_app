@@ -24,8 +24,8 @@
   </div>
 
   <div class="card-body">
-  	<strong>Domaine : </strong><%= @domain.name %><br/>
-    <strong>Sujet : </strong><%= @topic.name %><br/>
+  	<strong>Domaine : </strong><%= @tip.topic.domain.name %><br/>
+    <strong>Sujet : </strong><%= @tip.topic.name %><br/>
     <strong>Description : </strong><%= @tip.content %><br/>
     <strong>Auteur : </strong><%=  %> <%=  %><br/>
     <strong>Photo: </strong> <img src="<%= @tip.photo %>"><br/>
