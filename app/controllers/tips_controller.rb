@@ -24,7 +24,8 @@ class TipsController < ApplicationController
   end
 
   def create
-    tip = Tip.create(tip_params)
+    tip_data_user = tip_params.merge({'user_id' => current_user.id})
+    tip = Tip.create(tip_data_user)
     redirect_to tip_path(tip.id)
   end
 

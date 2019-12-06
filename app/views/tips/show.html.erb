@@ -27,7 +27,7 @@
   	<strong>Domaine : </strong><%= @tip.topic.domain.name %><br/>
     <strong>Sujet : </strong><%= @tip.topic.name %><br/>
     <strong>Description : </strong><%= @tip.content %><br/>
-    <strong>Auteur : </strong><%=  %> <%=  %><br/>
+    <strong>Auteur : </strong><%= @tip.user.first_name %> <%= @tip.user.last_name %><br/>
     <strong>Photo: </strong> <img src="<%= @tip.photo %>"><br/>
   </div>
 
