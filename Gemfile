@@ -74,4 +74,4 @@ gem 'rubocop'
 gem 'rspec'
 gem 'colorize', '~> 0.8.1'
 gem 'terminal-table'
-gem "table_print"
+gem 'table_print'
