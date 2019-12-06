@@ -24,7 +24,6 @@ class TipsController < ApplicationController
   end
 
   def create
-    #tip_params[:topic] = Topic.find_by(id:tip_params[:topic]) # on remplace l'id Topic par le topic (= on identifie l'id du topic correspondant au paramêtre tip
     tip = Tip.create(tip_params)
     redirect_to tip_path(tip.id)
   end
@@ -38,7 +37,7 @@ class TipsController < ApplicationController
   private
 
   def tip_params
-    params.require(:tip).permit(:name, :content, :photo)
+    params.require(:tip).permit(:name, :content, :photo, :topic_id)
   end
 
 end
