@@ -1,5 +1,5 @@
 class TipsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show]
+  #before_action :authenticate_user!, only: [:new, :show]
 
   def index
   	@tips = Tip.all
