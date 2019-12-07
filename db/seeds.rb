@@ -60,8 +60,8 @@ sleep(1)
 p "---------------- TIPS ----------------"
 
 tips = Tip.create!([
-	{user: User.all.sample, topic: Topic.all.sample, name:'Quand planter ?', content: "Au mois de mai à 20 cm de profondeur dans du terreau et avec une bonne exposition", photo: 'https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
-	{user: User.all.sample, topic: Topic.all.sample, name:'S\'hydrater', content:'le mal de tête est souvent causé par la déshydration', photo: 'https://images.pexels.com/photos/2128817/pexels-photo-2128817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
+	{user_id:"11", topic: Topic.all.sample, name:'Quand planter ?', content: "Au mois de mai à 20 cm de profondeur dans du terreau et avec une bonne exposition", photo: 'https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
+	{user_id:"11", topic: Topic.all.sample, name:'S\'hydrater', content:'le mal de tête est souvent causé par la déshydration', photo: 'https://images.pexels.com/photos/2128817/pexels-photo-2128817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
 	{user: User.all.sample, topic: Topic.all.sample, name:'Proteger les jeunes plants', content:'Mettre de l\'anti-limace ou entourer de cendre et renouveler après la pluie.'},
 	{user: User.all.sample, topic: Topic.all.sample, name:'Faire des listes', content:'lister ses choses à faire, les plus urgentes en premier et les moins urgentes à la fin; utiliser des applis telles que Trello'},
 	{user: User.all.sample, topic: Topic.all.sample, name:'Boire quali', content:'privilégier des alcools de qualités sans sulfites'},

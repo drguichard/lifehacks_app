@@ -1,5 +1,7 @@
 class TipsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show]
+  before_action :authenticate_user!, only: [:show]
+  before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
+
 
   def index
   	@tips = Tip.all
@@ -40,5 +42,12 @@ class TipsController < ApplicationController
   def tip_params
     params.require(:tip).permit(:name, :content, :photo, :topic_id)
   end
+
+  #def authenticate_loggued_user
+  #  if (current_user.id != params[:id].to_i) then
+  #    puts flash[:danger] = "mauvais profil"
+  #    #redirect_to root_path
+  #  end 
+  #end
 
 end
