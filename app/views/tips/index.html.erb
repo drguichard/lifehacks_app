@@ -8,33 +8,35 @@
   </div>
 </div>
 
-
-
-<section>
 <div class="card-deck">
-	<%Tip.all.each do |tip|%>
-	<div class="col-sm-4 mb-4">
+     <%Tip.all.each do |tip|%>
+        <div class="col-md-4 col-lg-4 mb-4">
+          <article class="card shadow h-70">
+            <img class="card-img-top" src="" alt="">
+            <div class="card-body p-5">
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tip.topic.domain.name %> </a>
+              <h2 class="h5 font-weight-medium">
+                <a href="single-article.html"><%= tip.topic.name %>: <%= tip.name %></a>
+              </h2>
+              <p><%=tip.content%></p>
+            </div>
+            <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
+              <div class="media align-items-center">
+                <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanna Wolfe">
+                  <img class="img-fluid rounded-circle" src="<=% tip.photo %>" alt="">
+                </div>
+                <div class="media-body d-flex justify-content-end text-muted font-size-1 ml-2">
+                  Créé le: <%= tip.created_at %></br>Mis à jour le <%= tip.updated_at %>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+    <%end%>
+ </div>
 
-		<div class="card">
 
-		  <div class="card-header text-center font-weight-bold bg-secondary text-light">
-		  <%= tip.topic.domain.name %> / <%= tip.topic.name %>: <%= tip.name %>
-		  </div>
 
-		  <div class="card-body align-center">
-		    <blockquote class="blockquote mb-0">
-		      <p><%=tip.content%></p>
-		      <footer class="blockquote-footer">
-			      <div class="row justify-content-between align-self-center mx-3">
-			      	<img class="card-img-top" src="<%=tip.photo%>" alt="">
-			      	<%= link_to "Détails", tip_path(tip.id), class: "btn btn-info btn-lg btn-block" %>
-			      </div>
-		      </footer>
-		    </blockquote>
-		  </div>
 
-		</div>
-	</div>
-	<%end%>
-</div>
-</section>
+
+
