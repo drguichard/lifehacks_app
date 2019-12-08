@@ -12,7 +12,7 @@
      <%Tip.all.each do |tip|%>
         <div class="col-md-4 col-lg-4 mb-4">
           <article class="card shadow h-70">
-            <img class="card-img-top" src="" alt="">
+            <img class="card-img-top" src="<%= tip.photo %>" alt="">
             <div class="card-body p-5">
               <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tip.topic.domain.name %> </a>
               <h2 class="h5 font-weight-medium">
@@ -22,10 +22,7 @@
             </div>
             <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
               <div class="media align-items-center">
-                <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanna Wolfe">
-                  <img class="img-fluid rounded-circle" src="<=% tip.photo %>" alt="">
-                </div>
-                <div class="media-body d-flex justify-content-end text-muted font-size-1 ml-2">
+                 <div class="media-body d-flex justify-content-end text-muted font-size-1 ml-2">
                   Auteur: <%= tip.user.first_name %> <%= tip.user.last_name %></br> 
                   Créé le: <%= tip.created_at %></br>
                   Mis à jour le <%= tip.updated_at %>
