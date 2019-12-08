@@ -26,7 +26,9 @@
                   <img class="img-fluid rounded-circle" src="<=% tip.photo %>" alt="">
                 </div>
                 <div class="media-body d-flex justify-content-end text-muted font-size-1 ml-2">
-                  Créé le: <%= tip.created_at %></br>Mis à jour le <%= tip.updated_at %>
+                  Auteur: <%= tip.user.first_name %> <%= tip.user.last_name %></br> 
+                  Créé le: <%= tip.created_at %></br>
+                  Mis à jour le <%= tip.updated_at %>
                 </div>
               </div>
             </div>
