@@ -1,32 +1,30 @@
 </br></br>
 <div class="card">
-
-  <div class="card-header">
-    <div class="font-weight-bold text-center">
-    	<h1>Life-hack : <%=@tip.name%></h1>
+    <div class="card-header">
+      <div class="font-weight-bold text-center">
+      	<h1>Life-hack : <%=@tip.name%></h1>
+      </div>
+    </div>
+    <div class="nav btn-group">
+    	<a href="<%= tips_path %>" class="btn btn-light">Home</a>
+    	<a href="<%= tips_path %>" class="btn btn-info">Autres</a>
+      <% if current_user %>
+      	<a href="<%= edit_tip_path %>" class="btn btn-warning">Editer</a>
+      	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer</a>
+      	<a href="<%= tip_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+      <% end %>
     </div>
   </div>
 
-  <div class="nav btn-group">
-  	<a href="<%= tips_path %>" class="btn btn-light">Home</a>
-  	<a href="<%= tips_path %>" class="btn btn-info">Autres</a>
-
-    <% if current_user %>
-    	<a href="<%= edit_tip_path %>" class="btn btn-warning">Editer</a>
-    	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer</a>
-    	<a href="<%= tip_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-    <% end %>
-  </div>
-
-
-  </div>
 
   <div class="card-body">
   	<strong>Domaine : </strong><%= @tip.topic.domain.name %><br/>
     <strong>Sujet : </strong><%= @tip.topic.name %><br/>
     <strong>Description : </strong><%= @tip.content %><br/>
     <strong>Auteur : </strong><%= @tip.user.first_name %> <%= @tip.user.last_name %><br/>
-    <strong>Photo: </strong> <img src="<%= @tip.photo %>"><br/>
+    <strong>Photo du life-hack: </strong> <img src="<%= @tip.photo %>"><br/>
+    <strong>Commentaires: </strong> <br/>
+
   </div>
 
 </div>
