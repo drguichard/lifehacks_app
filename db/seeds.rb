@@ -42,7 +42,9 @@ sleep(1)
 
 p "---------------- DOMAINS ----------------"
 
-domains = Domain.create!([{ name: 'Jardinage' }, { name: 'Sorties' },{name: 'Productivité'}])
+domains = Domain.create!([{ name: 'Jardinage', photo: 'https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' }, 
+	{ name: 'Sorties', photo: 'https://images.pexels.com/photos/948199/pexels-photo-948199.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
+	{ name: 'Productivité', photo: 'https://images.pexels.com/photos/2266875/pexels-photo-2266875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}])
 tp Domain.all
 p "The database has now #{Domain.count} domains"
 sleep(1)
@@ -50,9 +52,9 @@ sleep(1)
 p "---------------- TOPICS ----------------"
 
 topics = Topic.create!([
-	{user: User.all.sample, domain: Domain.all.sample, name: 'Tomate' }, 
-	{user: User.all.sample, domain: Domain.all.sample, name: 'Lendemain de fête' },
-	{user: User.all.sample, domain: Domain.all.sample, name: 'Organisation'}])
+	{user: User.all.sample, domain_id:"1", name: 'Tomate' }, 
+	{user: User.all.sample, domain_id:"2", name: 'Lendemain de fête' },
+	{user: User.all.sample, domain_id:"3", name: 'Organisation'}])
 tp Topic.all
 p "The database has now #{Topic.count} topics"
 sleep(1)
@@ -60,8 +62,8 @@ sleep(1)
 p "---------------- TIPS ----------------"
 
 tips = Tip.create!([
-	{user_id:"11", topic: Topic.all.sample, name:'Quand planter ?', content: "Au mois de mai à 20 cm de profondeur dans du terreau et avec une bonne exposition", photo: 'https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
-	{user_id:"11", topic: Topic.all.sample, name:'S\'hydrater', content:'le mal de tête est souvent causé par la déshydration', photo: 'https://images.pexels.com/photos/2128817/pexels-photo-2128817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
+	{user_id:"11", topic_id:"1", name:'Quand planter ?', content: "Au mois de mai à 20 cm de profondeur dans du terreau et avec une bonne exposition"},
+	{user_id:"11", topic_id:"2", name:'S\'hydrater', content:'le mal de tête est souvent causé par la déshydration'},
 	{user: User.all.sample, topic: Topic.all.sample, name:'Proteger les jeunes plants', content:'Mettre de l\'anti-limace ou entourer de cendre et renouveler après la pluie.'},
 	{user: User.all.sample, topic: Topic.all.sample, name:'Faire des listes', content:'lister ses choses à faire, les plus urgentes en premier et les moins urgentes à la fin; utiliser des applis telles que Trello'},
 	{user: User.all.sample, topic: Topic.all.sample, name:'Boire quali', content:'privilégier des alcools de qualités sans sulfites'},

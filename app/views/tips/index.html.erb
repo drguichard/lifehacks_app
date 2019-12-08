@@ -12,7 +12,7 @@
      <%Tip.all.each do |tip|%>
         <div class="col-md-4 col-lg-4 mb-4">
           <article class="card shadow h-70">
-            <img class="card-img-top" src="<%= tip.photo %>" alt="">
+            <img class="card-img-top img-thumbnail img-fluid" src="<%= tip.topic.domain.photo %>" alt="">
             <div class="card-body p-5">
               <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tip.topic.domain.name %> </a>
               <h2 class="h5 font-weight-medium">
