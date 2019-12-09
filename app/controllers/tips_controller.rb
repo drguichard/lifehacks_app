@@ -28,7 +28,7 @@ class TipsController < ApplicationController
   def create
     tip_data_user = tip_params.merge({'user_id' => current_user.id})
     tip = Tip.create(tip_data_user)
-    flash[:success] = "C'est enregistrée et bientôt en ligne après un passage en modération"
+    flash[:success] = "C'est enregistré et bientôt en ligne après un passage en modération"
     redirect_to tip_path(tip.id)
   end
 
