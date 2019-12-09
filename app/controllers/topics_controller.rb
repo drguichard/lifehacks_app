@@ -11,8 +11,8 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    @topic.update(topic.params)
-    redirect_to topics_path
+    @topic.update(topic_params)
+    redirect_to topic_path(@topic.id)
   end
 
   def destroy
@@ -23,8 +23,8 @@ class TopicsController < ApplicationController
 
   def create
     topic_data_user = topic_params.merge({'user_id' => current_user.id})
-    topic = Topic.create(topic_data_user)
-    redirect_to topic_path(topic.id)
+    topic = Topic.create!(topic_data_user)
+    redirect_to topics_path
   end
 
   def new
