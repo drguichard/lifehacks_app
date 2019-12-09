@@ -1,4 +1,3 @@
-</br></br>
 <div class="card">
     <div class="card-header">
       <div class="font-weight-bold text-center">
@@ -7,7 +6,6 @@
     </div>
     <div class="nav btn-group">
     	<a href="<%= tips_path %>" class="btn btn-light">Home</a>
-    	<a href="<%= tips_path %>" class="btn btn-info">Autres</a>
       <% if current_user %>
       	<a href="<%= edit_tip_path %>" class="btn btn-warning">Editer</a>
       	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer</a>
@@ -19,7 +17,7 @@
 
   <div class="card-body">
   	<strong>Domaine : </strong><%= @tip.topic.domain.name %><br/>
-    <strong>Sujet : </strong><%= @tip.topic.name %><br/>
+    <strong>Sujet : </strong><a href="<%= topic_path %>"><%= @tip.topic.name %></a><br/>
     <strong>Description : </strong><%= @tip.content %><br/>
     <strong>Auteur : </strong><%= @tip.user.first_name %> <%= @tip.user.last_name %><br/>
     <strong>Photo du life-hack: </strong> <img src="<%= @tip.photo %>"><br/>

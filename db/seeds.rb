@@ -43,8 +43,8 @@ sleep(1)
 p "---------------- DOMAINS ----------------"
 
 domains = Domain.create!([{ name: 'Jardinage', photo: 'https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' }, 
-	{ name: 'Sorties', photo: 'https://images.pexels.com/photos/948199/pexels-photo-948199.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' },
-	{ name: 'Productivité', photo: 'https://images.pexels.com/photos/2266875/pexels-photo-2266875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}])
+	{ name: 'Sorties', photo: 'https://images.pexels.com/photos/450301/pexels-photo-450301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+	{ name: 'Productivité', photo: 'https://images.pexels.com/photos/842548/pexels-photo-842548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}])
 tp Domain.all
 p "The database has now #{Domain.count} domains"
 sleep(1)

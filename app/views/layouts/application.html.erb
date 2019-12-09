@@ -15,16 +15,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-
-
   <body>
-
-    <div class="container">
-      <% if flash[:success] %>
-              <div class="alert alert-success"><%= flash[:success] %></div>
-      <% end %>
-    </div>
-
     <header>
       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <a class="navbar-brand" href="<%= root_path %> ">Life-Hacks</a>
@@ -77,10 +68,14 @@
           </form>
         </div>
       </nav>
+      <% if flash[:success] %>
+        <div class="alert alert-success"><%= flash[:success] %></div>
+      <% end %>
     </header>
 
 
 
       <%= yield %>
+
   </body>
 </html>

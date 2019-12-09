@@ -25,7 +25,7 @@
 }
 
 form {
-	margin: 1rem;
+	margin: rem;
 }
 
 @charset "UTF-8";
@@ -5325,6 +5325,7 @@ a.badge-indigo:focus, a.badge-indigo.focus {
   color: #006957;
   background-color: #ccf4ed;
   border-color: #b8f0e6;
+  margin: 0rem;
 }
 
 .alert-success hr {
@@ -8030,7 +8031,7 @@ button.bg-indigo:focus {
 }
 
 .fixed-top {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
