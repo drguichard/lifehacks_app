@@ -1,6 +1,5 @@
 class TipsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
-  before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
 
 
   def index
@@ -18,7 +17,7 @@ class TipsController < ApplicationController
   def update
     @tip = Tip.find(params[:id])
     @tip.update(tip_params)
-    flash[:notice] = "La modification est appliquée"
+    flash[:success] = "La modification est appliquée"
     redirect_to tip_path(@tip.id)
   end
 
@@ -29,12 +28,14 @@ class TipsController < ApplicationController
   def create
     tip_data_user = tip_params.merge({'user_id' => current_user.id})
     tip = Tip.create(tip_data_user)
+    flash[:success] = "C'est enregistrée et bientôt en ligne après un passage en modération"
     redirect_to tip_path(tip.id)
   end
 
   def destroy
     @tip = Tip.find(params[:id])
     @tip.destroy
+    flash[:success] = "Lifehack supprimé"
     redirect_to tips_path
   end
 

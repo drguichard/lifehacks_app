@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
- <!-- Bootstrap  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -16,72 +15,72 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+
   <body>
 
-  <!-- Devise advises:      
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p> -->
+    <div class="container">
+      <% if flash[:success] %>
+              <div class="alert alert-success"><%= flash[:success] %></div>
+      <% end %>
+    </div>
 
-         <!-- NAV BAR -->
-  <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-      <a class="navbar-brand" href="<%= root_path %> ">Life-Hacks</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="<%= root_path %> ">Life-Hacks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
 
-           <li class="nav-item">
-            <a class="nav-link active" href="<%= root_path %> ">Home<span class="sr-only">(current)</span></a>
-          </li>
 
-          <% if user_signed_in?  %>
-            <li class="nav-item">
-              <a class="nav-link active" href="<%= topics_path %> ">Sujets<span class="sr-only">(current)</span></a>
-            </li>
-         
-            <li class="nav-item">
-              <a class="nav-link active" href="<%= new_tip_path %>">Créer<span class="sr-only">(current)</span></a>
-            </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Session de <%= current_user.first_name %> <%= current_user.last_name %></a>
-              <div class="dropdown-menu">
-                  <%= link_to "Mon dashboard", new_user_registration_path, class: "dropdown-item" %>
-                  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
+            <% if user_signed_in?  %>
+              <li class="nav-item">
+                <a class="nav-link active" href="<%= root_path %> ">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="<%= topics_path %> ">Sujets<span class="sr-only">(current)</span></a>
+              </li>
+           
+              <li class="nav-item">
+                <a class="nav-link active" href="<%= new_tip_path %>">Créer<span class="sr-only">(current)</span></a>
+              </li>
 
-          <% else %>
-            <div class="dropdown">
-              <button class="btn btn-danger dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Création de compte/Connexion
-              </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <%= link_to "Créer un compte", new_user_registration_path, class: "dropdown-item" %>
-                  <%= link_to "Se loguer", new_user_session_path, class: "dropdown-item" %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Session de <%= current_user.first_name %> <%= current_user.last_name %></a>
+                <div class="dropdown-menu">
+                    <%= link_to "Mon dashboard", new_user_registration_path, class: "dropdown-item" %>
+                    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                 </div>
-          <% end %>
-        </ul>
+              </li>
 
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
-      </div>
-    </nav>
-  </header>
+            <% else %>
+              <div class="dropdown">
+                <button class="btn btn-warning dropdown btn-sm" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Création de compte/Connexion
+                </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <%= link_to "Créer un compte", new_user_registration_path, class: "dropdown-item" %>
+                    <%= link_to "Se loguer", new_user_session_path, class: "dropdown-item" %>
+                  </div>
+            <% end %>
+          </ul>
 
-  <div class="container-fluid">
-    <% if flash[:notice] %>
-        <div class="alert alert-sucess"><%= flash[:notice] %></div>
-    <% end %>
-  </div>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          </form>
+        </div>
+      </nav>
+    </header>
 
-    <%= yield %>
+
+
+      <%= yield %>
   </body>
 </html>
