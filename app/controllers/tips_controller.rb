@@ -18,6 +18,7 @@ class TipsController < ApplicationController
   def update
     @tip = Tip.find(params[:id])
     @tip.update(tip_params)
+    flash[:notice] = "La modification est appliquée"
     redirect_to tip_path(@tip.id)
   end
 

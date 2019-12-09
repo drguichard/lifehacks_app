@@ -3,7 +3,9 @@
 
   <div class="card-header">
     <div class="font-weight-bold text-center">
-    	<h1>Life-hack : <%=@topic.name%></h1>
+    	<h1>Sujet : <%=@topic.name%></h1>
+      <h2>Domaine : </strong><%= @topic.domain.name %></h2>
+
     </div>
   </div>
 
@@ -22,8 +24,31 @@
   </div>
 
   <div class="card-body">
-  	<strong>Domaine : </strong><%= @topic.domain.name %><br/>
-    <strong>Sujet : </strong><%= @topic.name %><br/>
+    <div class="card-deck">
+     <%Tip.all.each do |tip|%>
+        <div class="col-md-4 col-lg-4 mb-4">
+          <article class="card shadow h-70">
+            <img class="card-img-top" height= "250px" src="<%= tip.topic.domain.photo %>" alt="">
+            <div class="card-body p-5">
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tip.topic.domain.name %> </a>
+              <h2 class="h5 font-weight-medium">
+                <a href="<%= tip_path(tip.id) %>"><%= tip.topic.name %>: <%= tip.name %></a>
+              </h2>
+              <p><%=tip.content%></p>
+            </div>
+            <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
+              <div class="media align-items-center">
+                 <div class="media-body d-flex justify-content-start text-muted font-size-1 ml-2">
+                  Auteur:        <%= tip.user.first_name %> <%= tip.user.last_name %></br> 
+                  Créé le:       <%= (tip.created_at).day %>/ <%= (tip.created_at).month %>/ <%= (tip.created_at).year %></br>
+                  Mis à jour le: <%= (tip.updated_at).day %>/<%= (tip.updated_at).month %>/<%= (tip.updated_at).year %>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+    <%end%>
+ </div>
   </div>
 
 </div>

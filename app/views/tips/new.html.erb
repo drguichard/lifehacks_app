@@ -7,9 +7,11 @@
       <%= form_for @tip, url: tips_path, html: { class: "form-signin mt-3" } do |f| %>
         <h1 class="h3 mb-3 font-weight-normal text-center">Créer un life-hack</h1>
         <div class="form-group">
-          <%= f.label :title, "Sujet" %><br />
-          <%= f.collection_select :topic_id, Topic.all, :id, :name, prompt: 'Quel est le sujet ?', class: "form-control", :required => true %>
+          <%= f.label :title, "Choisir un sujet" %><br />
+          <%= f.collection_select :topic_id, Topic.all, :id, :name, prompt: 'Choisir un sujet', class: "form-control", :required => true %>
+          <a class="btn btn-dark" href="<%= new_topic_path %> ">Créer un sujet<span class="sr-only">(current)</span></a>
         </div>
+
         <div class="form-group">
           <%= f.label :title, "Titre" %><br />
           <%= f.text_field :name, class: "form-control" %>
@@ -19,7 +21,7 @@
           <%= f.text_area :content, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :title, "Url photo" %><br />
+          <%= f.label :title, "Ajouter une photo ? (url)" %><br />
           <%= f.text_field :photo, class: "form-control" %>
         </div>
        

@@ -30,27 +30,32 @@
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
+
+           <li class="nav-item">
+            <a class="nav-link active" href="<%= root_path %> ">Home<span class="sr-only">(current)</span></a>
+          </li>
+
           <% if user_signed_in?  %>
-            <li class="nav-item active">
-              <a class="nav-link" href="<%= tips_path %> ">Lifehacks<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link active" href="<%= topics_path %> ">Sujets<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="<%= topics_path %> ">Sujets<span class="sr-only">(current)</span></a>
+         
+            <li class="nav-item">
+              <a class="nav-link active" href="<%= new_tip_path %>">Créer<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="<%= root_path %> ">Mon dashboard<span class="sr-only">(current)</span></a>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Session de <%= current_user.first_name %> <%= current_user.last_name %></a>
+              <div class="dropdown-menu">
+                  <%= link_to "Mon dashboard", new_user_registration_path, class: "dropdown-item" %>
+                  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="<%= new_tip_path %>">Créer<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item disabled">
-              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
-            </li> 
 
           <% else %>
-
             <div class="dropdown">
               <button class="btn btn-danger dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,9 +64,10 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <%= link_to "Créer un compte", new_user_registration_path, class: "dropdown-item" %>
                   <%= link_to "Se loguer", new_user_session_path, class: "dropdown-item" %>
-            </div>
+                </div>
           <% end %>
         </ul>
+
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
@@ -69,6 +75,12 @@
       </div>
     </nav>
   </header>
+
+  <div class="container-fluid">
+    <% if flash[:notice] %>
+        <div class="alert alert-sucess"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
 
     <%= yield %>
   </body>

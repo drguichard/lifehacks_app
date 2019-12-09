@@ -14,7 +14,10 @@
 			<tr>
 				<td><%= topic.id %></td>
 				<td><%= topic.name %></td>
-				<td><a href="<%= edit_topic_path(topic.id)%>" class="btn btn-info">Editer</a>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-info">Voir tous les life-Hacks à ce sujet</a>
+				<td><a href="<%= edit_topic_path(topic.id)%>" class="btn btn-warning">Editer</a>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+				
 				</td>
 			</tr>
 			<% end %>
