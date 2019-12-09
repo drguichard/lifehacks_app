@@ -42,7 +42,7 @@ sleep(1)
 
 p "---------------- DOMAINS ----------------"
 
-domains = Domain.create!([{ name: 'Jardinage', photo: 'https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' }, 
+domains = Domain.create!([{ name: 'Jardinage', photo: 'https://images.unsplash.com/photo-1570396750814-3911a0747d09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' }, 
 	{ name: 'Sorties', photo: 'https://images.pexels.com/photos/450301/pexels-photo-450301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
 	{ name: 'Productivité', photo: 'https://images.pexels.com/photos/842548/pexels-photo-842548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}])
 tp Domain.all

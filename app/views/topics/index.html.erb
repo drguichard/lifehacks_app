@@ -1,28 +1,21 @@
 <h1>Les sujets</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<td>ID</td>
-				<td>Nom</td>
-			</tr>
-		</thead>
-
-
-		<tbody>
+	<table class="table row">
+		<tbody class="container">
 			<% @topics.each do |topic| %>
 			<tr>
-				<td><%= topic.id %></td>
 				<td><%= topic.name %></td>
-				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-info">Voir tous les life-Hacks à ce sujet</a>
-				<td><a href="<%= edit_topic_path(topic.id)%>" class="btn btn-warning">Editer</a>
-				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-				
-				</td>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-primary">Voir tous les life-Hacks à ce sujet</a>
+				<td><a href="<%= edit_topic_path(topic.id)%>" class="btn btn-outline-secondary">Editer le sujet</a>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce sujet</a>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
 
-	<p><a href="<%= new_topic_path %>" class="btn btn-success">Créer un nouveau sujet</a></p>
+	<footer>			
+		<p><a href="<%= new_topic_path %>" class="btn btn-outline-dark">Créer un nouveau sujet</a></p>
+	</footer>
 
+
+	
