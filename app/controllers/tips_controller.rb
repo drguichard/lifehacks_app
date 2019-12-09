@@ -1,6 +1,6 @@
 class TipsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
-  before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_tip_params, only: [:edit, :update, :create, :destroy]
 
 
   def index
@@ -12,11 +12,9 @@ class TipsController < ApplicationController
   end
 
   def edit
-    @tip = Tip.find(params[:id])
   end
 
   def update
-    @tip = Tip.find(params[:id])
     @tip.update(tip_params)
     redirect_to tip_path(@tip.id)
   end
@@ -32,7 +30,6 @@ class TipsController < ApplicationController
   end
 
   def destroy
-    @tip = Tip.find(params[:id])
     @tip.destroy
     redirect_to tips_path
   end
@@ -42,6 +39,10 @@ class TipsController < ApplicationController
   def tip_params
     params.require(:tip).permit(:name, :content, :photo, :topic_id)
   end
+
+  def set_tip_params
+    @tip = Tip.find(params[:id])
+  end 
 
   #def authenticate_loggued_user
   #  if (current_user.id != params[:id].to_i) then
