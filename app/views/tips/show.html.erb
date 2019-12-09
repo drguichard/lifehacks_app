@@ -4,16 +4,7 @@
       	<h1>Life-hack : <%=@tip.name%></h1>
       </div>
     </div>
-    <div class="nav btn-group">
-    	<a href="<%= tips_path %>" class="btn btn-light">Home</a>
-      <% if current_user %>
-      	<a href="<%= edit_tip_path %>" class="btn btn-warning">Editer</a>
-      	<a href="<%= new_tip_path %>" class="btn btn-primary">Créer</a>
-      	<a href="<%= tip_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-      <% end %>
-    </div>
   </div>
-
 
   <div class="card-body">
   	<strong>Domaine : </strong><%= @tip.topic.domain.name %><br/>
@@ -22,7 +13,14 @@
     <strong>Auteur : </strong><%= @tip.user.first_name %> <%= @tip.user.last_name %><br/>
     <strong>Photo du life-hack: </strong> <img src="<%= @tip.photo %>"><br/>
     <strong>Commentaires: </strong> <br/>
-
   </div>
+
+  <div class="nav btn-group">
+  <% if current_user %>
+    <a href="<%= new_tip_path %>" class="btn btn-dark">Créer</a>
+    <a href="<%= edit_tip_path %>" class="btn btn-light">Editer</a>
+    <a href="<%= tip_path %>" class="btn btn-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+  <% end %>
+</div>
 
 </div>

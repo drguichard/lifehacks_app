@@ -4,19 +4,7 @@
     <div class="font-weight-bold text-center">
     	<h1>Sujet : <%=@topic.name%></h1>
       <h2>Domaine : </strong><%= @topic.domain.name %></h2>
-
     </div>
-  </div>
-
-  <div class="nav btn-group">
-  	<a href="<%= topics_path %>" class="btn btn-light">Home</a>
-  	<a href="<%= topics_path %>" class="btn btn-info">Autres</a>
-
-    <% if current_user %>
-    	<a href="<%= edit_topic_path %>" class="btn btn-warning">Editer</a>
-    	<a href="<%= new_topic_path %>" class="btn btn-primary">Créer</a>
-    	<a href="<%= topic_path %>" class="btn btn-danger" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-    <% end %>
   </div>
 
 
@@ -48,6 +36,14 @@
         </div>
     <%end%>
  </div>
+  </div>
+
+  <div class="nav btn-group">
+    <% if current_user %>
+      <a href="<%= new_topic_path %>" class="btn btn-dark">Créer</a>
+      <a href="<%= edit_topic_path %>" class="btn btn-dark">Editer</a>
+      <a href="<%= topic_path %>" class="btn btn-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
+    <% end %>
   </div>
 
 </div>
