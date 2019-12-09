@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
+
   def index
     @topics = Topic.all
   end
