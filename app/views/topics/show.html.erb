@@ -12,23 +12,23 @@
 
   <div class="card-body">
     <div class="card-deck">
-     <%Tip.all.each do |tip|%>
+     <%@tips.all.each do |tips|%>
         <div class="col-md-4 col-lg-4 mb-4">
           <article class="card shadow h-70">
-            <img class="card-img-top" height= "250px" src="<%= tip.topic.domain.photo %>" alt="">
+            <img class="card-img-top" height= "250px" src="<%= tips.topic.domain.photo %>" alt="">
             <div class="card-body p-5">
-              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tip.topic.domain.name %> </a>
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tips.topic.domain.name %> </a>
               <h2 class="h5 font-weight-medium">
-                <a href="<%= tip_path(tip.id) %>"><%= tip.topic.name %>: <%= tip.name %></a>
+                <a href="<%= tip_path(tips.id) %>"><%= tips.topic.name %>: <%= tips.name %></a>
               </h2>
-              <p><%=tip.content%></p>
+              <p><%=tips.content%></p>
             </div>
             <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
               <div class="media align-items-center">
                  <div class="media-body d-flex justify-content-start text-muted font-size-1 ml-2">
-                  Auteur:        <%= tip.user.first_name %> <%= tip.user.last_name %></br> 
-                  Créé le:       <%= (tip.created_at).day %>/ <%= (tip.created_at).month %>/ <%= (tip.created_at).year %></br>
-                  Mis à jour le: <%= (tip.updated_at).day %>/<%= (tip.updated_at).month %>/<%= (tip.updated_at).year %>
+                  Auteur:        <%= tips.user.first_name %> <%= tips.user.last_name %></br> 
+                  Créé le:       <%= (tips.created_at).day %>/ <%= (tips.created_at).month %>/ <%= (tips.created_at).year %></br>
+                  Mis à jour le: <%= (tips.updated_at).day %>/<%= (tips.updated_at).month %>/<%= (tips.updated_at).year %>
                 </div>
               </div>
             </div>
