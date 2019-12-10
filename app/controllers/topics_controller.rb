@@ -1,5 +1,7 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
+  before_action :secret, only: [:edit, :update, :destroy]
+
 
   def index
     @topics = Topic.all
@@ -42,5 +44,14 @@ class TopicsController < ApplicationController
 
   def topic_params
     params.require(:topic).permit(:name, :domain_id)
+  end
+
+  def secret
+    @topic = Topic.find(params[:id])
+    @admin = User.find(@topic.user_id)
+      unless @admin.id == current_user.id
+        flash[:success] = "Vous n'avez pas le droit d'éditer ou supprimer le sujet car vous n'êtes pas l'auteur !"
+        redirect_to tips_path
+      end
   end
 end
