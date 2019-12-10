@@ -1,8 +1,9 @@
 <%= form_for @topic do |f| %>
     <div class="form-group">
-        <%= f.label :title, "Domaine" %><br />
-        <%= f.collection_select :domain_id, Domain.all, :id, :name, prompt: 'Quel est le domaine ?', class: "form-control", :required => true %>
+        <%= f.label :title, "Choisir un domaine :" %><br />
+        <%= f.collection_select :domain_id, Domain.all, :id, :name, class: "form-control", :required => true %>
     </div>
+
 	<div class="form-group">
 		<%= f.text_field :name, placeholder:'Nom ', class: 'form-control' %>
 	</div>

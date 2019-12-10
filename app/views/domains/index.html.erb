@@ -1,0 +1,23 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3 text-light"><strong>Les domaines </strong><br></h1>
+  </div>
+</div>
+
+	<table class="table row">
+		<tbody class="container">
+			<% @domains.each do |domain| %>
+			<tr>
+				<td><%= domain.name %></td>
+				<td><a href="<%= topics_path(domain.id) %>" class="btn btn-outline-primary">Voir tous les sujets de ce domaine</a>
+				<td><a href="<%= edit_domain_path(domain.id)%>" class="btn btn-outline-secondary">Editer le domaine</a>
+				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce sujet</a>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<footer>			
+		<p><a href="<%= new_topic_path %>" class="btn btn-outline-dark">Créer un nouveau sujet</a></p>
+	</footer>
+

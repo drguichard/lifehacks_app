@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3 text-light"><strong>Daily life-hacks </strong><br></h1>
+    <h1 class="display-3 text-light"><strong>Wise Life-hacks </strong><br></h1>
     <p class="lead text-white"><strong>Sphères de partage de savoirs pratiques.</strong></p>
   </div>
 </div>
@@ -11,7 +11,7 @@
           <article class="card shadow h-70">
             <img class="card-img-top" height= "250px" src="<%= tip.topic.domain.photo %>" alt="">
             <div class="card-body p-5">
-              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= tip.topic.domain.name %> </a>
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href=""><%= tip.topic.domain.name %> </a>
               <h2 class="h5 font-weight-medium">
                 <a href="<%= tip_path(tip.id) %>"><%= tip.topic.name %>: <%= tip.name %></a>
               </h2>
