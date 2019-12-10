@@ -1,5 +1,6 @@
 class TipsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
+  before_action :secret, only: [:edit, :update, :destroy]
 
 
   def index
@@ -45,11 +46,13 @@ class TipsController < ApplicationController
     params.require(:tip).permit(:name, :content, :photo, :topic_id)
   end
 
-  #def authenticate_loggued_user
-  #  if (current_user.id != params[:id].to_i) then
-  #    puts flash[:danger] = "mauvais profil"
-  #    #redirect_to root_path
-  #  end 
-  #end
+  def secret
+      @tip = Tip.find(params[:id])
+      @admin = User.find(@tip.user_id)
+        unless @admin.id == current_user.id
+          flash[:success] = "Vous n'avez pas le droit d'éditer ou supprimer le life hack car vous n'êtes pas l'auteur !"
+          redirect_to tips_path
+        end
+    end
 
 end
