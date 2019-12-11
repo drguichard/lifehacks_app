@@ -51,8 +51,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'faker'
-
 end
 
 group :test do
@@ -76,5 +74,7 @@ gem 'rspec'
 gem 'colorize', '~> 0.8.1'
 gem 'terminal-table'
 gem 'table_print'
+gem 'faker'
+
 
 
