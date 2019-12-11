@@ -5242,7 +5242,7 @@ a.badge-indigo:focus, a.badge-indigo.focus {
 	background-image: url('https://images.unsplash.com/photo-1473997094636-80cc50db3e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: position: static;
+	background-attachment: static;
 	background-position: middle;
 	color:black !important;
 	margin-top: 0rem;

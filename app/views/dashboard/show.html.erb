@@ -4,8 +4,51 @@
   </div>
 </div>
 
-	<div class="container">
-	  Identité : <%= @user.first_name %> <%= @user.last_name %></br> 
-	  Mail : <%= @user.email %></br> 
+<div class="container">
+	<div class="card-header">
+	  <%= @user.first_name %> <%= @user.last_name %></br> 
+	  <%= @user.email %></br> 
 	  Date de création du profil: <%= (@user.created_at).day %>/ <%= (@user.created_at).month %>/ <%= (@user.created_at).year%>
 	</div>
+
+	<div class="card-body">
+		<h3>Mes Life hacks</h3>
+		<div class="card-deck">
+		     <%Tip.all.each do |tips|%>
+		        <div class="col-md-4 col-lg-4 mb-4">
+		          <article class="card shadow h-70">
+		            <img class="card-img-top" height= "250px" src="<%= tips.topic.domain.photo %>" alt="">
+		            <div class="card-body p-5">
+		              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href=""><%= tips.topic.domain.name %> </a>
+		              <h2 class="h5 font-weight-medium">
+		                <a href="<%= tips_path(tips.id) %>"><%= tips.topic.name %>: <%= tips.name %></a>
+		              </h2>
+		              <p><%=tips.content%></p>
+		            </div>
+		            <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
+		              <div class="media align-items-center">
+		                 <div class="media-body d-flex justify-content-start text-muted font-size-1 ml-2">
+		                  Auteur:        <%= tips.user.first_name %> <%= tips.user.last_name %></br> 
+		                  Créé le:       <%= (tips.created_at).day %>/ <%= (tips.created_at).month %>/ <%= (tips.created_at).year %></br>
+		                  Mis à jour le: <%= (tips.updated_at).day %>/<%= (tips.updated_at).month %>/<%= (tips.updated_at).year %>
+		                </div>
+		              </div>
+		            </div>
+		          </article>
+		        </div>
+		    <%end%>
+ 		</div>
+	</div>
+
+	<div class="card-body">
+		<h3>Mes sujets</h3>
+		<div class="card-deck">
+		</div>
+
+	<div class="card-body">
+		<h3>Mes Domaines</h3>
+		<div class="card-deck">
+		</div>
+	</div>
+
+</div>
