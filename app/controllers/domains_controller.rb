@@ -16,6 +16,10 @@ class DomainsController < ApplicationController
   end
 
   def destroy
+    @domain = Domain.find(params[:id])
+    @domain.destroy
+    flash[:success] = "Le domaine est supprimé"
+    redirect_to domains_path
   end
 
   def create
