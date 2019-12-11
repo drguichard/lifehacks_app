@@ -9,9 +9,9 @@
 			<% @domains.each do |domain| %>
 			<tr>
 				<td><%= domain.name %></td>
-				<td><a href="<%= topics_path(domain.id) %>" class="btn btn-outline-primary">Voir tous les sujets de ce domaine</a>
+				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-primary">Voir les sujets du domaine <%= domain.name %></a>
 				<td><a href="<%= edit_domain_path(domain.id)%>" class="btn btn-outline-secondary">Editer le domaine</a>
-				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce sujet</a>
+				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce domaine</a>
 			</tr>
 			<% end %>
 		</tbody>
