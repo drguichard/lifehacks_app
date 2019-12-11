@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'domains/update'
   get 'domains/destroy'
   get 'domains/new'
-  root to: "tips#index"
+  root to: "domains#index"
   devise_for :users
   resources :tips
   resources :topics

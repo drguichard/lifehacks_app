@@ -1,14 +1,30 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3 text-light"><strong>Les domaines </strong><br></h1>
+    <h1 class="display-3 text-light"><strong>Wise Life-hacks </strong><br></h1>
+    <p class="lead text-white"><strong>Sphères de partage de savoirs pratiques.</strong></p>
   </div>
 </div>
 
-		<li class="container card">
-			<% @domains.sort_by(&:name).each do |domain| %>
-				<h2><a href="<%= domain_path(domain.id)%>" class="badge badge-success"><%= domain.name %></a></h2>
-			<% end %>
-		</li>
+<div class="card-deck">
+	<% @domains.sort_by(&:name).each do |domain| %>        
+		<div class="col-md-4 col-lg-4 mb-4">
+          <article class="card shadow h-70">
+            <img class="card-img-top" height= "250px" src="<%= domain.photo %>" alt="">
+            <div class="card-body p-5">
+              <h3><a class="badge badge-success px-3 mx-0" href="<%= domain_path(domain.id) %>"><%= domain.name %> </a></h3>
+            <div class="card-footer border-0 pt-0 pb-5 px-0 mx-0">
+              <div class="media align-items-center">
+                 <div class="media-body d-flex justify-content-start text-muted font-size-1 ml-2">
+                  Auteur:        <%= domain.user.first_name %> <%= domain.user.last_name %></br> 
+                  Créé le:       <%= (domain.created_at).day %>/ <%= (domain.created_at).month %>/ <%= (domain.created_at).year %></br>
+                  Mis à jour le: <%= (domain.updated_at).day %>/<%= (domain.updated_at).month %>/<%= (domain.updated_at).year %>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+    <%end%>
+ </div>
 
 
 

@@ -47,7 +47,7 @@ domains = Domain.create!([{user_id:"11", name: 'Jardinage', photo: 'https://imag
 	{user_id:"11", name: 'Productivité', photo: 'https://images.pexels.com/photos/842548/pexels-photo-842548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
 	{user: User.all.sample, name: 'Travail', photo: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'},
 	{user: User.all.sample, name: 'Evénement', photo: 'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'},
-	{user: User.all.sample, name: 'AUTRE', photo: 'https://images.pexels.com/photos/3325917/pexels-photo-3325917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
+	{user: User.all.sample, name: 'Non classé', photo: 'https://images.pexels.com/photos/1270184/pexels-photo-1270184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
 ])
 tp Domain.all
 p "The database has now #{Domain.count} domains"

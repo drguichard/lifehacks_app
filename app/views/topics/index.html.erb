@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3 text-light"><strong>Les sujets </strong><br></h1>
+    <h1 class="display-3 text-light"><strong>Les sujets/ les domaines </strong><br></h1>
   </div>
 </div>
 
@@ -9,8 +9,9 @@
 		<tbody class="container">
 			<% @topics.sort_by(&:name).each do |topic| %>
 			<tr>
-				<td><%= topic.name %></td>
-				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-primary">Voir tous les life-Hacks à ce sujet</a>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-success"><%= topic.name %></a></td>
+				<td><a href="<%= domain_path(topic.domain.id)%>" class="btn btn-outline-dark"><%= topic.domain.name %></a></td>
+				
 			</tr>
 			<% end %>
 		</tbody>

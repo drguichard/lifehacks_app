@@ -5,6 +5,10 @@ class DashboardController < ApplicationController
   end
 
   def update
+  	@user = current_user
+    @user.update(user_params)
+    flash[:success] = "La modification est appliquée"
+    redirect_to dashboard_path(@user.id)
   end
 
   def show
