@@ -30,7 +30,7 @@ class TopicsController < ApplicationController
     topic_data_user = topic_params.merge({'user_id' => current_user.id})
     topic = Topic.create!(topic_data_user)
     flash[:success] = "Le sujet est créé"
-    redirect_to topics_path
+    redirect_to new_tip_path
   end
 
   def new

@@ -26,7 +26,7 @@ class DomainsController < ApplicationController
     domain_data_user = domain_params.merge({'user_id' => current_user.id})
     domain = Domain.create!(domain_data_user)
     flash[:success] = "Le domaine est créé"
-    redirect_to domains_path
+    redirect_to new_topic_path
   end
 
   def new
