@@ -5,22 +5,36 @@
 </div>
 
 <div class="container">
-	<div class="card-header">
+	<div class="card-header">	
+		<h3>Mon compte</h3>	
 	  Mail: <%= @user.email %></br> 
 	  Date de création du compte: <%= (@user.created_at).day %>/ <%= (@user.created_at).month %>/ <%= (@user.created_at).year%>
-	<div class="nav btn-group">
-    <% if current_user %>
-      <a href="<%= edit_user_registration_path %>" class="btn btn-outline-dark btn-sm">Editer mon compte</a>
-    <% end %>
- 	</div>
-</div>
+		<div class="nav btn-group">
+	    <% if current_user %>
+	      <a href="<%= edit_user_registration_path %>" class="btn btn-outline-dark btn-sm">Editer mon compte</a>
+	    <% end %>
+	 	</div>
+	</div>
+<br>
+	<div class="card-header">
+		<h3>Mon profil</h3>	
+	  Ma description: </br> 
+	  Les sujets que je suis: </br> 
+	  les domaines que je suis: </br> 
+		<div class="nav btn-group">
+	    <% if current_user %>
+	      <a href="<%= edit_user_registration_path %>" class="btn btn-outline-dark btn-sm">Editer mon profil</a>
+	    <% end %>
+	 	</div>
+	</div>
 
 
 
 	<div class="card-body">
-		<h3>Mes Life hacks</h3>
+		<h3>Mes créations</h3>
+		<h5>Mes Life hacks</h5>
 		<div class="card-deck">
-		     <%Tip.all.each do |tips|%>
+		     <% @tips.all.each do |tips|%>
 		        <div class="col-md-4 col-lg-4 mb-4">
 		          <article class="card shadow h-70">
 		            <img class="card-img-top" height= "250px" src="<%= tips.topic.domain.photo %>" alt="">
@@ -44,17 +58,15 @@
 		        </div>
 		    <%end%>
  		</div>
+ 	</div>
+	
+
+	<div class="card-body">
+		<h5>Mes sujets</h5>
 	</div>
 
 	<div class="card-body">
-		<h3>Mes sujets</h3>
-		<div class="card-deck">
-		</div>
-
-	<div class="card-body">
-		<h3>Mes Domaines</h3>
-		<div class="card-deck">
-		</div>
+		<h5>Mes domaines</h5>
 	</div>
 
 </div>

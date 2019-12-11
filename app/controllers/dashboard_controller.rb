@@ -11,7 +11,7 @@ class DashboardController < ApplicationController
 
   def show
   	  @user = current_user
-  	  @tips = @user.tips
+      @tips = @user.tips
   end
 
   def delete

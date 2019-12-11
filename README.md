@@ -18,6 +18,14 @@ Local server view :
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+	TO DO LIST
+
+* Search bar that works with keywords.
+* Share links on all cards (tips, topics, domains).
+* Dashboard with profile edition, author sction, favorite domain topics tips.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 	INTRODUCTION
 
 I love to learn things from very various **domains** and **topics**, I feel passionated, work hard to learn but my motivation fades away very quickly. <br>
