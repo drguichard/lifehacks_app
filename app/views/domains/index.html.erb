@@ -4,11 +4,11 @@
   </div>
 </div>
 
-		<ul class="container card">
+		<li class="container card">
 			<% @domains.sort_by(&:name).each do |domain| %>
 				<h2><a href="<%= domain_path(domain.id)%>" class="badge badge-success"><%= domain.name %></a></h2>
 			<% end %>
-		</ul>
+		</li>
 
 
 

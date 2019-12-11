@@ -11,10 +11,10 @@
       <%= form_for @tip, url: tips_path, html: { class: "form-signin mt-3" } do |f| %>
         <h1 class="h3 mb-3 font-weight-normal text-center"></h1>
         <div class="form-group">
-          <%= f.label :title, "Sujet" %><br />
+          <%= f.label :title, "Choisir un sujet :" %><br />
             <div class="btn-group btn-group-sm" role="group" aria-label="...">
               <%= f.collection_select :topic_id, Topic.all, :id, :name, class: "form-control", :required => true %>
-              <a class="link" href="<%= new_topic_path %> ">ou alors créer un sujet<span class="sr-only">(current)</span></a>
+              <p> </p> <a class="btn btn-sm btn-outline-dark btn-block" href="<%= new_topic_path %> "> Créer un sujet<span class="sr-only">(current)</span></a>
           </div>
 
         </div>
@@ -33,7 +33,7 @@
         </div>
        
         <div class="actions mt-5">
-          <%= f.submit "Créer le life-hack", class: "btn btn-lg btn-primary btn-block" %>
+          <%= f.submit "Créer le life-hack", class: "btn btn-lg btn-outline-success btn-block active" %>
         </div>
       <% end %>
     </div>
