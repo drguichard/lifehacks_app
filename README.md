@@ -2,18 +2,17 @@
 
 # LIFE-HACKERS COMMUNITY
 
-Git clone https://github.com/drguichard/lifehacks_app/tree/masterclass
-
-In terminal go to the root
-Bundle install
-rails db:migrate
-rails db:seed
-
+Local server view :
+$ git clone https://github.com/drguichard/lifehacks_app/tree/masterclass
+$ bundle install
+$ rails db:migrate
+$ rails db:seed
 in your browser http://localhost:3000/
 
 [Trello-Users-stories_P1](https://trello.com/b/gxEx3CuS/s1-life-hacks-community-users-stories)
-[Trello-Users-stories_P2](https://trello.com/b/2HwB6FoU/s2-life-hacks-community)
 
+[Heroku - development](https://life-hacks-app.herokuapp.com/)
+[Heroku - production](https://life-hacks-app-production.herokuapp.com/)
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -30,19 +29,16 @@ I love to learn things from very various **domains** and **topics**, I feel pass
 
 Learning quickly from people that master a **domain** or a **topic**  with small tips seems to be a right solution.
 
-I want to create a community where people are willing to share their tips on the topics they master and receive tips on the topics they are interested in.
+I want to create a community where people are willing to share their tips on the topics they master and learn on tips on the topics they are interested in.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	APP COMPONENTS
 
-* short tips with text, image or video.
+* short tips with text and images.
 * search by keywords or browse in domain/topic.
-* personal newsletter.
 * very simple UI and beautiful design
-* awards for contributors (Friend, Master, Admin level: validation of a tip)
-* tips notation
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -65,8 +61,8 @@ I want to create a community where people are willing to share their tips on the
 
 >Title: Browsing pattern of user
 >Landing page->Dashboard: 
->Note over Landing page: a random life tip and log in
->Note over Dashboard: my topic's tips, my created tips, tips creation, profile edition (user, my domains, my topics), search console.
+>Note over Landing page: random life tips and log in
+>Note over Dashboard: my created topics, my created tips, profile edition (user, my domains, my topics).
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -76,7 +72,6 @@ I want to create a community where people are willing to share their tips on the
 * Sign in page
 * Dashboard page
 * Search page
-* Newsletter / Alerts
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -107,10 +102,8 @@ tip
 This project will mainly use THP competences acquired during session 10 (autumn 2019):
 * Database gestion with Active Record and PostgreSQL
 * Rails.
-* Devise gem for sign in/log in, cookies…
+* Devise gem 
 * Action mailer gem to send emails for a new tip on my matter alert.
-* Scrapping users #tips on twitter.
-
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -122,18 +115,6 @@ This project will mainly use THP competences acquired during session 10 (autumn 
 * UI kit
 * Rails
 * Javascript.
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	WHY YOU SHOULD JOIN ?
-
-Because we smile and :<br>
-
-* you'll **re-use** a great part of **what you learnt** in THP.
-* you'll be **proud** to show it to your future employer.
-* you are interested to be a part of this new community with an **admin status**.
-* you can **work on remote** (video meetings each day of development at 9H30 and slack connected). 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -161,14 +142,6 @@ Because we smile and :<br>
 	"What do you do ?"
 	-A community app based on life tips and tricks
 
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	TECHNICAL NEEDS
-
-* one/two oriented on controllers, action mailer and gems gestion.
-* one oriented on database and scrapping
-* one oriented on views and production (me)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -208,23 +181,3 @@ An app with:
 * [code in markdown](https://stackedit.io/app#)
 * [Share svg](https://svgur.com/)
 
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	PIPELINES ET BRANCHE DEVELOPMENT
-
-On va t'inviter à travailler avec un pipeline heroku.
-Plus d'info ici : https://devcenter.heroku.com/articles/pipelines
-
-Pour ce projet seulement deux étapes suffisent : production et development
-[heroku-life-hacks-app_development](https://life-hacks-app.herokuapp.com/)
-[heroku-life-hacks-app_production](https://life-hacks-app-production.herokuapp.com/)
-
-Je fais plusieurs branche dans mon git :
--1 : Master
--2 : Developpement
-
-Dès le début je fais un git checkout -b development et a partir de cette branche je crée d'autres branches (les features sur lesquels je bosse).
-Quand elles sont finies j'envoie une pull request sur la branche development.
-Si celle ci est acceptée par mes collegues, je push ma branche development sur heroku
-Si tout fonctionne bien sur developpement, je peux promote sur production

@@ -2,6 +2,8 @@ class DashboardController < ApplicationController
   before_action :secret, only: [:edit, :update, :destroy]
 
   def edit
+  	 @user = current_user
+
   end
 
   def update

@@ -11,9 +11,9 @@
           <article class="card shadow h-70">
             <img class="card-img-top" height= "250px" src="<%= tip.topic.domain.photo %>" alt="">
             <div class="card-body p-5">
-              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href=""><%= tip.topic.domain.name %> </a>
+              <a class="d-inline-block text-muted font-weight-medium text-uppercase medium mb-2" href="<%= domain_path(tip.id) %>"><%= tip.topic.domain.name %> </a>
               <h2 class="h5 font-weight-medium">
-                <a href="<%= tip_path(tip.id) %>"><%= tip.topic.name %>: <%= tip.name %></a>
+                <a href="<%= topic_path(tip.id) %>"><%= tip.topic.name %></a>: <a href="<%= tip_path(tip.id) %>"><%= tip.name %></a>
               </h2>
               <p><%=tip.content%></p>
             </div>

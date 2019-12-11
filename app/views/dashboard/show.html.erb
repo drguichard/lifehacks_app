@@ -6,10 +6,16 @@
 
 <div class="container">
 	<div class="card-header">
-	  <%= @user.first_name %> <%= @user.last_name %></br> 
-	  <%= @user.email %></br> 
-	  Date de création du profil: <%= (@user.created_at).day %>/ <%= (@user.created_at).month %>/ <%= (@user.created_at).year%>
-	</div>
+	  Mail: <%= @user.email %></br> 
+	  Date de création du compte: <%= (@user.created_at).day %>/ <%= (@user.created_at).month %>/ <%= (@user.created_at).year%>
+	<div class="nav btn-group">
+    <% if current_user %>
+      <a href="<%= edit_user_registration_path %>" class="btn btn-outline-dark btn-sm">Editer mon compte</a>
+    <% end %>
+ 	</div>
+</div>
+
+
 
 	<div class="card-body">
 		<h3>Mes Life hacks</h3>
