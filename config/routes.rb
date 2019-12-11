@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboard/edit'
+  get 'dashboard/update'
+  get 'dashboard/show'
+  get 'dashboard/delete'
   get 'domains/index'
   get 'domains/show'
   get 'domains/update'

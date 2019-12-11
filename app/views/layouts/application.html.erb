@@ -46,7 +46,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Session de <%= current_user.first_name %> <%= current_user.last_name %></a>
                 <div class="dropdown-menu">
-                    <%= link_to "Mon dashboard", new_user_registration_path, class: "dropdown-item" %>
+                    <%= link_to "Mon dashboard", dashboard_show_path, class: "dropdown-item" %>
                     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                 </div>
               </li>
