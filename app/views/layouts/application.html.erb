@@ -31,18 +31,14 @@
 
             <% if user_signed_in?  %>
               <li class="nav-item">
-                <a class="nav-link active" href="<%= root_path %> ">Life-hacks<span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="<%= domains_path %> ">Domaines<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="<%= topics_path %> ">Sujets<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="<%= domains_path %> ">Domaines<span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="<%= root_path %> ">Life-hacks<span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="<%= new_tip_path %>">Créer<span class="sr-only">(current)</span></a>
-              </li>
-
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Session de <%= current_user.first_name %> <%= current_user.last_name %></a>
                 <div class="dropdown-menu">
@@ -50,6 +46,7 @@
                     <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                 </div>
               </li>
+
 
             <% else %>
               <div class="dropdown">
@@ -64,10 +61,18 @@
             <% end %>
           </ul>
 
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Rechercher</button>
-          </form>
+            <% if user_signed_in?  %>
+            <div class="nav">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Rechercher</button>
+              </form>
+
+              <div class="nav-item">
+                <a class="btn btn-outline-dark my-2 my-sm-0" href="<%= new_tip_path %>">Créer<span class="sr-only">(current)</span></a>
+              </div>
+            <% end %>
+            </div>
         </div>
       </nav>
       <% if flash[:success] %>
