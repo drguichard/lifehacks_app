@@ -3,11 +3,11 @@
 # LIFE-HACKERS COMMUNITY
 
 Local server view :
-$ git clone https://github.com/drguichard/lifehacks_app/tree/masterclass
-$ bundle install
-$ rails db:migrate
-$ rails db:seed
-in your browser http://localhost:3000/
+* $ git clone https://github.com/drguichard/lifehacks_app/tree/masterclass
+* $ bundle install
+* $ rails db:migrate
+* $ rails db:seed
+* in your browser http://localhost:3000/
 
 [Trello-Users-stories_P1](https://trello.com/b/gxEx3CuS/s1-life-hacks-community-users-stories)
 
