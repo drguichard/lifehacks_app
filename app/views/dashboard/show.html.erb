@@ -34,7 +34,7 @@
 		<h3>Mes créations</h3>
 		<h5>Mes Life hacks</h5>
 		<div class="card-deck">
-		     <% @tips.all.each do |tips|%>
+		     <% @tips.sort_by(&:name).each do |tips|%>
 		        <div class="col-md-4 col-lg-4 mb-4">
 		          <article class="card shadow h-70">
 		            <img class="card-img-top" height= "250px" src="<%= tips.topic.domain.photo %>" alt="">
@@ -65,7 +65,7 @@
 	<h5>Mes sujets</h5>
 	<table class="table row">
 		<tbody class="container">
-			<% @topics.each do |topic| %>
+			<% @topics.sort_by(&:name).each do |topic| %>
 			<tr>
 				<td><%= topic.name %></td>
 				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-primary">Voir tous les life-Hacks à ce sujet</a>
@@ -75,13 +75,16 @@
 			<% end %>
 		</tbody>
 	</table>
+	<footer>			
+		<p><a href="<%= new_topic_path %>" class="btn btn-outline-dark">Créer un nouveau sujet</a></p>
+	</footer>
 	</div>
 
 	<div class="card-body">
 		<h5>Mes domaines</h5>
 	<table class="table row">
 		<tbody class="container">
-			<% @domains.each do |domain| %>
+			<% @domains.sort_by(&:name).each do |domain| %>
 			<tr>
 				<td><%= domain.name %></td>
 				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-primary">Voir les sujets du domaine <%= domain.name %></a>
@@ -91,6 +94,9 @@
 			<% end %>
 		</tbody>
 	</table>
+	<footer>			
+		<p><a href="<%= new_domain_path %>" class="btn btn-outline-dark">Créer un nouveau domaine</a></p>
+	</footer>
 	</div>
 
 </div>
