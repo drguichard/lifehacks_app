@@ -36,7 +36,7 @@ class DomainsController < ApplicationController
 private
 
   def domain_params
-    params.require(:domain).permit(:name, :domain_id)
+    params.require(:domain).permit(:name, :photo)
   end
 
   def secret

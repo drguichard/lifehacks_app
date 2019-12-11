@@ -42,12 +42,12 @@ sleep(1)
 
 p "---------------- DOMAINS ----------------"
 
-domains = Domain.create!([{ name: 'Jardinage', photo: 'https://images.unsplash.com/photo-1570396750814-3911a0747d09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' }, 
-	{ name: 'Sorties', photo: 'https://images.pexels.com/photos/450301/pexels-photo-450301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-	{ name: 'Productivité', photo: 'https://images.pexels.com/photos/842548/pexels-photo-842548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
-	{ name: 'Travail', photo: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'},
-	{ name: 'Evénement', photo: 'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'},
-	{ name: 'AUTRE', photo: 'https://images.pexels.com/photos/3325917/pexels-photo-3325917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
+domains = Domain.create!([{user_id:"11", name: 'Jardinage', photo: 'https://images.unsplash.com/photo-1570396750814-3911a0747d09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80' }, 
+	{user_id:"11", name: 'Sorties', photo: 'https://images.pexels.com/photos/450301/pexels-photo-450301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+	{user_id:"11", name: 'Productivité', photo: 'https://images.pexels.com/photos/842548/pexels-photo-842548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
+	{user: User.all.sample, name: 'Travail', photo: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'},
+	{user: User.all.sample, name: 'Evénement', photo: 'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'},
+	{user: User.all.sample, name: 'AUTRE', photo: 'https://images.pexels.com/photos/3325917/pexels-photo-3325917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'},
 ])
 tp Domain.all
 p "The database has now #{Domain.count} domains"
