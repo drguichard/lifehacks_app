@@ -62,11 +62,35 @@
 	
 
 	<div class="card-body">
-		<h5>Mes sujets</h5>
+	<h5>Mes sujets</h5>
+	<table class="table row">
+		<tbody class="container">
+			<% @topics.each do |topic| %>
+			<tr>
+				<td><%= topic.name %></td>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-primary">Voir tous les life-Hacks à ce sujet</a>
+				<td><a href="<%= edit_topic_path(topic.id)%>" class="btn btn-outline-secondary">Editer le sujet</a>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce sujet</a>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 	</div>
 
 	<div class="card-body">
 		<h5>Mes domaines</h5>
+	<table class="table row">
+		<tbody class="container">
+			<% @domains.each do |domain| %>
+			<tr>
+				<td><%= domain.name %></td>
+				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-primary">Voir les sujets du domaine <%= domain.name %></a>
+				<td><a href="<%= edit_domain_path(domain.id)%>" class="btn btn-outline-secondary">Editer le domaine</a>
+				<td><a href="<%= domain_path(domain.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce domaine</a>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 	</div>
 
 </div>

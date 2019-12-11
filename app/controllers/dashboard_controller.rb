@@ -11,13 +11,10 @@ class DashboardController < ApplicationController
 
   def show
   	  @user = current_user
-      @tips = @user.tips
+      @tips = Tip.where(:user_id => current_user.id)
+      @topics = Topic.where(:user_id => current_user.id)
+      @domains = Domain.where(:user_id => current_user.id)
   end
-
-  def delete
-  end
-
-   
 
 
  private
