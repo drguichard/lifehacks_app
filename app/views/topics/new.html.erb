@@ -5,7 +5,11 @@
     </div>
 
 	<div class="form-group">
-		<%= f.text_field :name, placeholder:'Nom ', class: 'form-control' %>
+ 		 <a href="<%= new_domain_path %>" class="btn btn-outline-dark btn-sm">Ou créer un nouveau domaine</a>
+	</div>
+
+	<div class="form-group">
+		<%= f.text_field :name, placeholder:'Nouveau sujet ', class: 'form-control' %>
 	</div>
 	<div class="form-group">
 		<button class="btn btn-primary" type="submit">Créer le sujet</button>

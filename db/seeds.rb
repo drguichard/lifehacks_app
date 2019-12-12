@@ -26,15 +26,17 @@ p "---------------- USERS ----------------"
 10.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
+  description = Faker::Quotes::Shakespeare.hamlet_quote
   User.create!(
     first_name: first_name,
     last_name: last_name,
+    description: description,
     password: Faker::Internet.password(min_length: 8),
     email: Faker::Internet.email(name: "#{last_name} #{first_name}", separators: '.')
   )
 end
-User.create!(first_name: "Thibault",last_name: "Guichard", password: "testtest",email: "tguichard8@hotmail.com")
-User.create!(first_name: "Fabrice",last_name: "Lazzarotto", password: "testtest",email: "fabricelazzarotto@gmail.com")
+User.create!(first_name: "Thibault",last_name: "Guichard", password: "testtest", email: "tguichard8@hotmail.com", description: "Hyper sympa, ultra violent, manichéiste, bégueule mais pas trop fort")
+User.create!(first_name: "Fabrice",last_name: "Lazzarotto", password: "testtest", email: "fabricelazzarotto@gmail.com")
 
 tp User.all
 p "The database has now #{User.count} users"
