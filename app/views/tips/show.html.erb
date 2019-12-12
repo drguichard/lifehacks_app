@@ -20,14 +20,6 @@
     <strong>Auteur : </strong><%= @tip.user.first_name %> <%= @tip.user.last_name %><br/>
     <strong>Photo du life-hack: </strong> <img src="<%= @tip.photo %>"><br/>
     <strong>Commentaires: </strong> <br/>
-
-  
-  <div class="nav btn-group">
-    <% if current_user %>
-      <a href="<%= new_tip_path %>" class="btn btn-outline-dark">Créer</a>
-      <a href="<%= edit_tip_path %>" class="btn btn-outline-dark">Editer</a>
-      <a href="<%= tip_path %>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer</a>
-  <% end %>
   </div>
 
 </div>
