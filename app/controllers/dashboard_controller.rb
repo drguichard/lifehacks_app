@@ -2,6 +2,8 @@ class DashboardController < ApplicationController
 
   def edit
   	 @user = current_user
+ 	 @tip = Tip.find_by(id:params[:id])
+
   end
 
   def update

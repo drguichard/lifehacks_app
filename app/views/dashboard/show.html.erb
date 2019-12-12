@@ -34,6 +34,10 @@
 	<div class="card-body">
 		<h3>Mes créations</h3>
 		<h5>Mes Life hacks</h5>
+		<div class="nav btn-group">
+     		 <a href="<%= new_tip_path %>" class="btn btn-outline-dark">Créer un nouveau life-hack</a>
+ 		</div>
+ 		<br>
 		<div class="card-deck">
 		     <% @tips.sort_by(&:name).each do |tips|%>
 		        <div class="col-md-4 col-lg-4 mb-4">
@@ -42,7 +46,7 @@
 		            <div class="card-body p-5">
 		              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href=""><%= tips.topic.domain.name %> </a>
 		              <h2 class="h5 font-weight-medium">
-		                <a href="<%= tips_path(tips.id) %>"><%= tips.topic.name %>: <%= tips.name %></a>
+		                <a href="<%= edit_tip_path(tips.id) %>"><%= tips.topic.name %>: <%= tips.name %></a>
 		              </h2>
 		              <p><%=tips.content%></p>
 		            </div>
@@ -60,29 +64,34 @@
 		    <%end%>
  		</div>
  	</div>
+
 	
 
 	<div class="card-body">
 	<h5>Mes sujets</h5>
+		<div class="nav btn-group">
+     		 <a href="<%= new_topic_path %>" class="btn btn-outline-dark">Créer un nouveau sujet</a>
+ 		</div>
 	<table class="table row">
 		<tbody class="container">
 			<% @topics.sort_by(&:name).each do |topic| %>
 			<tr>
 				<td><%= topic.name %></td>
-				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-primary">Voir tous les life-Hacks à ce sujet</a>
+				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-primary">Voir tous les life-Hacks du sujet <%= topic.name %></a>
 				<td><a href="<%= edit_topic_path(topic.id)%>" class="btn btn-outline-secondary">Editer le sujet</a>
 				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-dark" data-confirm="Etes-vous sûr ?" data-method="DELETE">Supprimer ce sujet</a>
 			</tr>
 			<% end %>
 		</tbody>
 	</table>
-	<footer>			
-		<p><a href="<%= new_topic_path %>" class="btn btn-outline-dark">Créer un nouveau sujet</a></p>
-	</footer>
+
 	</div>
 
 	<div class="card-body">
 		<h5>Mes domaines</h5>
+		<div class="nav btn-group">
+     		 <a href="<%= new_domain_path %>" class="btn btn-outline-dark">Créer un nouveau domaine</a>
+ 		</div>
 	<table class="table row">
 		<tbody class="container">
 			<% @domains.sort_by(&:name).each do |domain| %>
@@ -95,9 +104,6 @@
 			<% end %>
 		</tbody>
 	</table>
-	<footer>			
-		<p><a href="<%= new_domain_path %>" class="btn btn-outline-dark">Créer un nouveau domaine</a></p>
-	</footer>
 	</div>
 
 </div>
