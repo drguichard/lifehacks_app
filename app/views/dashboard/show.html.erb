@@ -18,9 +18,10 @@
 <br>
 	<div class="card-header">
 		<h3>Mon profil</h3>	
-	  Ma description: </br> 
+	  Ma description: <%= @user.description %></br> 
 	  Les sujets que je suis: </br> 
-	  les domaines que je suis: </br> 
+	  Les domaines que je suis: </br> 
+	  Les life-hacks que j'aime: </br> 
 		<div class="nav btn-group">
 	    <% if current_user %>
 	      <a href="<%= dashboard_edit_path %>" class="btn btn-outline-dark btn-sm">Editer mon profil</a>

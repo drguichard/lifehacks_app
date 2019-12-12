@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard/edit'
-  get 'dashboard/update'
+  patch 'dashboard/update'
   get 'dashboard/show'
   get 'dashboard/delete'
   get 'domains/index'

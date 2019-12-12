@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
   	@user = current_user
     @user.update(user_params)
     flash[:success] = "La modification est appliquée"
-    redirect_to dashboard_path(@user.id)
+    redirect_to dashboard_show_path(@user.id)
   end
 
   def show
@@ -21,10 +21,9 @@ class DashboardController < ApplicationController
 
  private
 
- # def user_params
- #   params.require(:user).permit(:user_id)
- # end
-#
+ def user_params
+    params.require(:user).permit(:user_id, :photo, :first_name, :last_name, :description)
+  end
 
 
 end
