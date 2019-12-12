@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page"><%= @domain.name %> > </li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @domain.name %> / </li>
   </ol>
 </nav>
 
@@ -21,10 +21,9 @@
           <article class="card shadow h-70">
             <img class="card-img-top" height= "250px" src="<%= topics.domain.photo %>" alt="">
             <div class="card-body p-5">
-              <a class="d-inline-block text-muted font-weight-medium text-uppercase small mb-2" href="#"><%= topics.domain.name %> </a>
-              <h2 class="h5 font-weight-medium">
-                <a href="<%= topic_path(topics.id) %>"><%= topics.name %>
-              </h2>
+              <div class="badge badge-pill badge-light ">
+                <h5><a href="<%= topic_path(topics.id) %>"><%= topics.name %></a></h5>
+              </div>
             </div>
             <div class="card-footer border-0 pt-0 pb-5 px-0 mx-5">
               <div class="media align-items-center">

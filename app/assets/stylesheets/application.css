@@ -5084,7 +5084,6 @@ a.badge:hover, a.badge:focus {
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
-  position: center;
 }
 
 .badge-primary {
