@@ -5,14 +5,16 @@
 </div>
 
 <div class="card-header row">
-	<h2><div class="badge badge-success">Domaine</div><h2><div class="badge badge-dark">Sujets correspondant</div></h2>
+	<h2><div class="badge badge-success">Quel domaine ?</div><h2><div class="badge badge-dark">Quel sujet ?</div></h2>
 </div>
 
 	<div class="row">
 		<div class="container">
 			<% @topics.sort_by(&:name).each do |topic| %>
 				<div>
-					<h3><a href="<%= domain_path(topic.domain.id)%>" class="badge badge-success"><%= topic.domain.name %></a> <a href="<%= topic_path(topic.id)%>" class="badge badge-dark"><%= topic.name %></a>
+					<h3></a> 
+						<a href="<%= topic_path(topic.id)%>" class="badge badge-dark"><%= topic.name %>
+						<a href="<%= domain_path(topic.domain.id)%>" class="badge badge-success"><%= topic.domain.name %></a>
 					</h3>
 				</div>
 			<% end %>
