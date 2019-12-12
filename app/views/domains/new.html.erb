@@ -3,7 +3,7 @@
 		<%= f.text_field :name, placeholder:'Nom ', class: 'form-control' %>
 	</div>
 	<div class="form-group">
-		<%= f.text_field :photo, placeholder:'photo url', class: 'form-control' %>
+		<%= f.file_field :image, class: 'form-control' %>
 	</div>
 	<div class="form-group">
 		<button class="btn btn-primary" type="submit">Créer le domaine</button>
