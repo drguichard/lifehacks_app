@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="<%= domain_path %>"><%= @tip.topic.domain.name %></a></li>
-    <li class="breadcrumb-item"><a href="<%= topic_path %>"><%= @tip.topic.name %></a></li>
+    <li class="breadcrumb-item"><a href="<%= domain_path(@tip.topic.domain.id) %>"><%= @tip.topic.domain.name %></a></li>
+    <li class="breadcrumb-item"><a href="<%= topic_path(@tip.topic.id) %>"><%= @tip.topic.name %></a></li>
     <li class="breadcrumb-item active" aria-current="page"><%=@tip.name%></li>
 
   </ol>
