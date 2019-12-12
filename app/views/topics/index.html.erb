@@ -4,15 +4,17 @@
   </div>
 </div>
 
+<div class="card-header row">
+	<h2><div class="badge badge-success">Domaine</div><h2><div class="badge badge-dark">Sujets correspondant</div></h2>
+</div>
 
-	<table class="table row">
-		<tbody class="container">
+	<div class="row">
+		<div class="container">
 			<% @topics.sort_by(&:name).each do |topic| %>
-			<tr>
-				<td><a href="<%= topic_path(topic.id)%>" class="btn btn-outline-success"><%= topic.name %></a></td>
-				<td><a href="<%= domain_path(topic.domain.id)%>" class="btn btn-outline-dark"><%= topic.domain.name %></a></td>
-				
-			</tr>
+				<div>
+					<h3><a href="<%= domain_path(topic.domain.id)%>" class="badge badge-success"><%= topic.domain.name %></a> <a href="<%= topic_path(topic.id)%>" class="badge badge-dark"><%= topic.name %></a>
+					</h3>
+				</div>
 			<% end %>
 		</tbody>
 	</table>
