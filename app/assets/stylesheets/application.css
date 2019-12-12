@@ -5238,7 +5238,7 @@ a.badge-indigo:focus, a.badge-indigo.focus {
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   background-color: #f8fafd;
   border-radius: 0.625rem;
 	background-image: url('https://images.unsplash.com/photo-1473997094636-80cc50db3e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
