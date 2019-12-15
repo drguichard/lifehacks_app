@@ -20,9 +20,12 @@ Local server view :
 
 	TO DO LIST
 
-* Search bar that works with keywords.
-* Share links on all cards (tips, topics, domains).
-* Dashboard with profile edition, author sction, favorite domain topics tips.
+* Tips and Topics search bar.
+* Share links icons on all cards (tips, topics, domains).
+* Dashboard with avatar, favorite domain, topics and tips.
+* Comments on tips.
+* Uploadable photos and other links for tips.
+* ACtion mailer: registration and alerts on new tips according to domains and/or topics follow.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -51,7 +54,7 @@ I want to create a community where people are willing to share their tips on the
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	THE BROWSING PATTERNS OF USERS
+	INITIAL BROWSING PATTERNS OF USERS
 <p align="center">
   <img width=auto height=auto src="https://svgshare.com/i/G8i.svg">
 </p>
@@ -77,31 +80,11 @@ I want to create a community where people are willing to share their tips on the
 
 	PAGES
 
-* Landing page with random tips.
-* Sign in page
-* Dashboard page
-* Search page
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	DATABASE
-
-user
-* has_many :tips through :topic
-
-domain
-* has_many :users
-* has_many :topics
-
-topic
-* belongs_to :domain
-* has_many :domains
-
-tip
-* belongs_to :user
-* belongs_to :topic
-
-[Database scheme- comments allowed](https://drive.google.com/file/d/1cBeVdEN9kjMpSmPOjgXi-y0CeuNHlyje/view?usp=sharing)
+* Landing page with domains.
+* Topics.
+* Tips.
+* User pages (gevise).
+* Dashboard page.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -121,9 +104,7 @@ This project will mainly use THP competences acquired during session 10 (autumn 
 This project will mainly use THP competences acquired during session 10 (autumn 2019):
 * HTML/CSS
 * Bootstrap
-* UI kit
 * Rails
-* Javascript.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -167,11 +148,11 @@ An app with:
 	FINAL VERSION
 
 An app with:
-* Landing page with random tips.
-* Sign in/ Connection page
-* Dashboard page
-* Search page
-* Alerts send
+* Landing page with domains.
+* Sign in/ Connection page.
+* Dashboard page.
+* Search bar.
+* Alerts send.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
