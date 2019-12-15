@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 class TipsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
-  before_action :secret, only: [:edit, :update, :destroy]
-
+  before_action :secret, only: %i[edit update destroy]
 
   def index
-  	@tips = Tip.all
+    @tips = Tip.all
   end
 
   def show
-  	@tip = Tip.find_by(id:params[:id])
+    @tip = Tip.find_by(id: params[:id])
   end
 
   def edit
@@ -18,7 +19,7 @@ class TipsController < ApplicationController
   def update
     @tip = Tip.find(params[:id])
     @tip.update(tip_params)
-    flash[:success] = "La modification est appliquée"
+    flash[:success] = 'La modification est appliquée'
     redirect_to tip_path(@tip.id)
   end
 
@@ -27,7 +28,7 @@ class TipsController < ApplicationController
   end
 
   def create
-    tip_data_user = tip_params.merge({'user_id' => current_user.id})
+    tip_data_user = tip_params.merge('user_id' => current_user.id)
     tip = Tip.create(tip_data_user)
     flash[:success] = "C'est enregistré et bientôt en ligne après un passage en modération"
     redirect_to tip_path(tip.id)
@@ -36,7 +37,7 @@ class TipsController < ApplicationController
   def destroy
     @tip = Tip.find(params[:id])
     @tip.destroy
-    flash[:success] = "Lifehack supprimé"
+    flash[:success] = 'Lifehack supprimé'
     redirect_to tips_path
   end
 
@@ -47,12 +48,11 @@ class TipsController < ApplicationController
   end
 
   def secret
-      @tip = Tip.find(params[:id])
-      @admin = User.find(@tip.user_id)
-        unless @admin.id == current_user.id
-          flash[:success] = "Vous n'avez pas le droit d'éditer ou supprimer le life hack car vous n'êtes pas l'auteur !"
-          redirect_to tips_path
-        end
-    end
+    @tip = Tip.find(params[:id])
+    @admin = User.find(@tip.user_id)
+    return if @admin.id == current_user.id
 
+    flash[:success] = "Vous n'avez pas le droit d'éditer ou supprimer le life hack car vous n'êtes pas l'auteur !"
+    redirect_to tips_path
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'dashboard/edit'
   patch 'dashboard/update'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   get 'domains/update'
   get 'domains/destroy'
   get 'domains/new'
-  root to: "domains#index"
+  root to: 'domains#index'
   devise_for :users
   resources :tips
   resources :topics

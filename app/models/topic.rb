@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class Topic < ApplicationRecord
-		#validates :name, presence: true, uniqueness: true
+  # validates :name, presence: true, uniqueness: true
 
-	has_many :tips
+  has_many :tips
 
-	belongs_to :user
-	belongs_to :domain
+  belongs_to :user
+  belongs_to :domain
 end
