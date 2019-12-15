@@ -51,9 +51,9 @@ class TopicsController < ApplicationController
   def secret
     @topic = Topic.find(params[:id])
     @admin = User.find(@topic.user_id)
-    unless @admin.id == current_user.id
-      flash[:success] = "Vous n'avez pas le droit d'éditer ou supprimer le sujet car vous n'êtes pas l'auteur !"
-      redirect_to tips_path
-    end
+    return if @admin.id == current_user.id
+
+    flash[:success] = "Vous n'avez pas le droit d'éditer ou supprimer le sujet car vous n'êtes pas l'auteur !"
+    redirect_to tips_path
   end
 end
