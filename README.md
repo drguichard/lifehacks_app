@@ -2,6 +2,8 @@
 
 # LIFE-HACKERS COMMUNITY
 
+[Video presentation](https://www.youtube.com/watch?v=BrjRZX_FDAo&t=239s)
+
 Local server view :
 * $ git clone https://github.com/drguichard/lifehacks_app/tree/masterclass
 * $ bundle install
