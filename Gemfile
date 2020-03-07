@@ -78,3 +78,5 @@ gem 'rspec'
 gem 'rubocop'
 gem 'table_print'
 gem 'terminal-table'
+gem "nokogiri", ">= 1.10.8"
+
